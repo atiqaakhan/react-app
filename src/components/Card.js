@@ -1,12 +1,6 @@
-import React, { useEffect } from "react";
-import { dataMonitor } from "../helper/monitorData";
+import React from "react";
 
-const Card = ({ children, dataEmitter, title }) => {
-  useEffect(() => {
-    dataMonitor(dataEmitter);
-    // eslint-disable-next-line
-  }, []);
-
+const Card = ({ children, title }) => {
   return (
     <div className="item">
       <h3 data-testid="title">{title}</h3>
