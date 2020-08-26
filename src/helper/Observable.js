@@ -12,9 +12,7 @@ export const useObservable = (initialState) => {
     const observable$ = interval(time).pipe(
       scan(() => {
         setTimeout(() => {
-          setLimit((l) => {
-            return l === 1000 ? 1001 : 1000;
-          });
+          setLimit((l) => (l === 1000 ? 1001 : 1000));
         }, 1000);
         return generateRandomNumbers(20, 30);
       })
